@@ -8,7 +8,7 @@ import plotly.express as px
 st.title('T1 Final Income Statistics')
 st.write('This tool allows users to visualize data on Canadian tax return data created by the Finances of the Nation \
 project. Use the widgets below to choose which provinces, items and quintiles you would like to graph. Graphs can \
-be download as .png files. ')
+be downloaded by clicking on the camera icon. ')
 
 # Read Data
 df = pd.read_csv("https://raw.githubusercontent.com/h3mps/t1webapp/master/t1-testfile.csv")
