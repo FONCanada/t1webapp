@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 @st.cache
 def importdata():
     # store the data somewhere online; there are size limits which can be an issue, but GitHub is a good option
-    return pd.read_csv("https://raw.githubusercontent.com/h3mps/t1webapp/master/public_cumulative.csv")
+    return pd.read_csv("https://raw.githubusercontent.com/FONCanada/t1webapp/master/public_cumulative.csv")
 
 # call function to import the data
 df = importdata()
@@ -222,7 +222,7 @@ fig.update_layout(
 
 # add FON logo
 fig.layout.images = [dict(
-    source="https://raw.githubusercontent.com/h3mps/t1webapp/master/FON_ICON_blue.png",
+    source="https://raw.githubusercontent.com/FONCanada/t1webapp/master/FON_ICON_blue.png",
     xref="paper", yref="paper",
     x=1, y=0,
     sizex=0.25, sizey=0.25,
