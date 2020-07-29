@@ -59,37 +59,37 @@ if UNIT == 'Average Real 2019 Dollars Per Taxfiler':
 
 # Percentiles
 # Common Measures: Some Pre-Filled Percentile Ranges
-st.sidebar.markdown('**Common Measures**')
+st.markdown('**Common Measures**')
 if UNIT == 'Share of Item':
-    COM1 = st.sidebar.checkbox('Top 1% Share', value=True, key=unitvar + '1')
-    COM2 = st.sidebar.checkbox('95%-99% Share', key=unitvar + '2')
-    COM3 = st.sidebar.checkbox('Bottom 50% Share', key=unitvar + '3')
+    COM1 = st.checkbox('Top 1% Share', value=True, key=unitvar + '1')
+    COM2 = st.checkbox('95%-99% Share', key=unitvar + '2')
+    COM3 = st.checkbox('Bottom 50% Share', key=unitvar + '3')
 if UNIT == 'Total Real 2019 Dollars':
-    COM1 = st.sidebar.checkbox('Top 1% Dollars', key=unitvar + '1')
-    COM2 = st.sidebar.checkbox('Grand Total', value=True, key=unitvar + '2')
-    COM3 = st.sidebar.checkbox('Bottom 50% Dollars', key=unitvar + '3')
+    COM1 = st.checkbox('Top 1% Dollars', key=unitvar + '1')
+    COM2 = st.checkbox('Grand Total', value=True, key=unitvar + '2')
+    COM3 = st.checkbox('Bottom 50% Dollars', key=unitvar + '3')
 if UNIT == 'Average Real 2019 Dollars Per Taxfiler':
-    COM1 = st.sidebar.checkbox('Top 1% Average Dollars', key=unitvar + '1')
-    COM2 = st.sidebar.checkbox('All Taxfilers Average Dollars', value=True, key=unitvar + '2')
-    COM3 = st.sidebar.checkbox('Bottom 50% Average Dollars', key=unitvar + '3')
+    COM1 = st.checkbox('Top 1% Average Dollars', key=unitvar + '1')
+    COM2 = st.checkbox('All Taxfilers Average Dollars', value=True, key=unitvar + '2')
+    COM3 = st.checkbox('Bottom 50% Average Dollars', key=unitvar + '3')
 
 # Custom Lines: Allow people to add their own custom lines
-st.sidebar.markdown('**Add Custom Lines**')
+st.markdown('**Add Custom Lines**')
 # Function to Display the Submenu
 def submenu(i):
     # Choose Percentiles From Slider
-    slidevals = st.sidebar.slider('Percentile Range', 0, 100, (20, 80), 5, key='slider' + i)
+    slidevals = st.slider('Percentile Range', 0, 100, (20, 80), 5, key='slider' + i)
 
     return slidevals
 
 # Display Submenus as conditional statements, where 2 only shows up if 1 selected
-if st.sidebar.checkbox('Add Custom Line 1'):
+if st.checkbox('Add Custom Line 1'):
     PERCS1 = submenu('1')
     LINE1 = True
-    if st.sidebar.checkbox('Add Custom Line 2'):
+    if st.checkbox('Add Custom Line 2'):
         PERCS2 = submenu('2')
         LINE2 = True
-        if st.sidebar.checkbox('Add Custom Line 3'):
+        if st.checkbox('Add Custom Line 3'):
             PERCS3 = submenu('3')
             LINE3 = True
         else:
